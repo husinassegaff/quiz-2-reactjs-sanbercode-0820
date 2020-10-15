@@ -1,14 +1,15 @@
-// buatlah arrow function volume balok dan kubus, gunakan rest parameter di parameter functionnya. lalu tampilkan 
-// hasil perhitungannya dengan template literal
+const volumeBalok = (...rest) => {
+    let [panjang, lebar, tinggi] = rest
+    let volume = panjang*lebar*tinggi
+    return `hasil volume balok dari panjang ${panjang}, lebar ${lebar} dan tinggi ${tinggi} adalah ${volume}`
+} 
 
-const volumebalok = (...rest) =>{
-    return rest.volumebalok(bangunbalok => bangunbalok.balokvolume !== undefined)
+
+const volumeKubus = (...rest) => {
+    let sisi = rest
+    let volume = sisi*sisi*sisi
+    return `hasil volume kubus dari sisi ${sisi} adalah ${volume}`
 }
 
-console.log(volumebalok(1, {balokvolume: 8 * 7 * 6 }, "next"))
-
-const volumekubus = (...rest) =>{
-    return rest.volumekubus(bangunkubus => bangunkubus.VolumeKubus !== undefined)
-}
-
-console.log(volumekubus(1, {VolumeKubus : 5 * 5 * 5 }, "next"))
+console.log(volumeBalok(5,6,7))
+console.log(volumeKubus(8))
